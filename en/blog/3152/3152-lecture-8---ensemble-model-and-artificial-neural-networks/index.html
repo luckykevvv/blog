@@ -1,0 +1,422 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="icon" href="/favicon.ico"><meta name="generator" content="Astro v6.3.6"><meta name="description" content="Ensemble Model and Artificial Neural Networks"><meta property="og:title" content="3152 Lecture 8 | C3EZ"><meta property="og:description" content="Ensemble Model and Artificial Neural Networks"><meta property="og:type" content="website"><link rel="alternate" hreflang="zh-CN" href="/blog/3152/3152-lecture-8---ensemble-model-and-artificial-neural-networks/"><link rel="alternate" hreflang="en" href="/en/blog/3152/3152-lecture-8---ensemble-model-and-artificial-neural-networks/"><meta name="astro-view-transitions-enabled" content="true"><meta name="astro-view-transitions-fallback" content="animate"><script type="module" src="/_astro/ClientRouter.astro_astro_type_script_index_0_lang.CAqDO0tx.js"></script><title>3152 Lecture 8 | C3EZ</title><link rel="stylesheet" href="/_astro/Layout.D_vj0Qvx.css"><style>[data-astro-transition-scope="astro-ywc4v3e3-1"] { view-transition-name: blog-title-3152-3152-lecture-8---ensemble-model-and-artificial-neural-networks; }@layer astro { ::view-transition-old(blog-title-3152-3152-lecture-8---ensemble-model-and-artificial-neural-networks) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }::view-transition-new(blog-title-3152-3152-lecture-8---ensemble-model-and-artificial-neural-networks) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back]::view-transition-old(blog-title-3152-3152-lecture-8---ensemble-model-and-artificial-neural-networks) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back]::view-transition-new(blog-title-3152-3152-lecture-8---ensemble-model-and-artificial-neural-networks) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; } }[data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-ywc4v3e3-1"],
+			[data-astro-transition-fallback="old"][data-astro-transition-scope="astro-ywc4v3e3-1"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-ywc4v3e3-1"],
+			[data-astro-transition-fallback="new"][data-astro-transition-scope="astro-ywc4v3e3-1"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back][data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-ywc4v3e3-1"],
+			[data-astro-transition=back][data-astro-transition-fallback="old"][data-astro-transition-scope="astro-ywc4v3e3-1"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back][data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-ywc4v3e3-1"],
+			[data-astro-transition=back][data-astro-transition-fallback="new"][data-astro-transition-scope="astro-ywc4v3e3-1"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }</style><style>[data-astro-transition-scope="astro-gbvijb6a-2"] { view-transition-name: page-content; }@layer astro { ::view-transition-old(page-content) { 
+	animation-duration: 90ms, 220ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1), cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both, both;
+	animation-name: astroFadeOut, astroSlideToLeft; }::view-transition-new(page-content) { 
+	animation-duration: 210ms, 220ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1), cubic-bezier(0.76, 0, 0.24, 1);
+	animation-delay: 30ms;
+	animation-fill-mode: both, both;
+	animation-name: astroFadeIn, astroSlideFromRight; }[data-astro-transition=back]::view-transition-old(page-content) { 
+	animation-name: astroFadeOut, astroSlideToRight; }[data-astro-transition=back]::view-transition-new(page-content) { 
+	animation-name: astroFadeIn, astroSlideFromLeft; } }[data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-gbvijb6a-2"],
+			[data-astro-transition-fallback="old"][data-astro-transition-scope="astro-gbvijb6a-2"] { 
+	animation-duration: 90ms, 220ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1), cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both, both;
+	animation-name: astroFadeOut, astroSlideToLeft; }[data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-gbvijb6a-2"],
+			[data-astro-transition-fallback="new"][data-astro-transition-scope="astro-gbvijb6a-2"] { 
+	animation-duration: 210ms, 220ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1), cubic-bezier(0.76, 0, 0.24, 1);
+	animation-delay: 30ms;
+	animation-fill-mode: both, both;
+	animation-name: astroFadeIn, astroSlideFromRight; }[data-astro-transition=back][data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-gbvijb6a-2"],
+			[data-astro-transition=back][data-astro-transition-fallback="old"][data-astro-transition-scope="astro-gbvijb6a-2"] { 
+	animation-name: astroFadeOut, astroSlideToRight; }[data-astro-transition=back][data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-gbvijb6a-2"],
+			[data-astro-transition=back][data-astro-transition-fallback="new"][data-astro-transition-scope="astro-gbvijb6a-2"] { 
+	animation-name: astroFadeIn, astroSlideFromLeft; }</style><style>[data-astro-transition-scope="astro-l7r54iwe-3"] { view-transition-name: site-header; }@layer astro { ::view-transition-old(site-header) { animation: none; opacity: 0; mix-blend-mode: normal; }::view-transition-new(site-header) { animation: none; mix-blend-mode: normal; }::view-transition-group(site-header) { animation: none } }[data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-l7r54iwe-3"],
+			[data-astro-transition-fallback="old"][data-astro-transition-scope="astro-l7r54iwe-3"] { animation: none; mix-blend-mode: normal; }[data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-l7r54iwe-3"],
+			[data-astro-transition-fallback="new"][data-astro-transition-scope="astro-l7r54iwe-3"] { animation: none; mix-blend-mode: normal; }</style></head> <body class="min-h-screen bg-black text-white antialiased"> <div class="pointer-events-none fixed inset-0 z-0 overflow-hidden" data-astro-transition-persist="site-background"> <div class="absolute inset-0 bg-cover bg-center bg-no-repeat" style="background-image: url(&quot;/bg.jpg&quot;); filter: blur(2px); opacity: 0.55; transform: scale(1)"></div> <div class="absolute inset-0" style="background: rgba(0, 0, 0, 0.68)"></div> <canvas data-rain-canvas data-mode="falling" data-density="1" data-speed="0.5" data-drop-color="rgba(210, 230, 255, 0.5)" data-ripple-color="rgba(210, 230, 255, 0.34)" data-max-drops="200" data-max-ripples="200" class="absolute inset-0 h-full w-full" aria-hidden="true"></canvas> </div> <header class="sticky top-0 z-50 border-b border-white/10 bg-black/80 backdrop-blur-xl" data-astro-transition-scope="astro-l7r54iwe-3"> <nav class="mx-auto flex max-w-6xl items-center justify-between px-5 py-4"> <a href="/" class="text-sm font-semibold uppercase tracking-[0.28em] text-white"> C3EZ </a> <div class="hidden items-center gap-1 md:flex"> <a href="/en/" class="rounded-full px-3 py-2 text-sm text-zinc-400 transition hover:bg-white/10 hover:text-white"> Home </a><a href="/en/about" class="rounded-full px-3 py-2 text-sm text-zinc-400 transition hover:bg-white/10 hover:text-white"> About </a><a href="/en/projects" class="rounded-full px-3 py-2 text-sm text-zinc-400 transition hover:bg-white/10 hover:text-white"> Projects </a><a href="/en/blog" class="rounded-full px-3 py-2 text-sm text-zinc-400 transition hover:bg-white/10 hover:text-white"> Blog </a><a href="/en/graph" class="rounded-full px-3 py-2 text-sm text-zinc-400 transition hover:bg-white/10 hover:text-white"> Graph </a><a href="/en/resume" class="rounded-full px-3 py-2 text-sm text-zinc-400 transition hover:bg-white/10 hover:text-white"> Resume </a><a href="/en/contact" class="rounded-full px-3 py-2 text-sm text-zinc-400 transition hover:bg-white/10 hover:text-white"> Contact </a> </div> <a href="mailto:luckykevvv@gmail.com" class="rounded-full border border-white/15 px-4 py-2 text-sm text-white transition hover:border-white/40 hover:bg-white hover:text-black"> Say hi </a> <a href="/blog/3152/3152-lecture-8---ensemble-model-and-artificial-neural-networks/" class="hidden rounded-full px-3 py-2 text-sm text-zinc-400 transition hover:bg-white/10 hover:text-white md:block"> 中文 </a> </nav> <div class="flex gap-1 overflow-x-auto px-5 pb-3 md:hidden"> <a href="/en/" class="shrink-0 rounded-full bg-white/5 px-3 py-1.5 text-sm text-zinc-300"> Home </a><a href="/en/about" class="shrink-0 rounded-full bg-white/5 px-3 py-1.5 text-sm text-zinc-300"> About </a><a href="/en/projects" class="shrink-0 rounded-full bg-white/5 px-3 py-1.5 text-sm text-zinc-300"> Projects </a><a href="/en/blog" class="shrink-0 rounded-full bg-white/5 px-3 py-1.5 text-sm text-zinc-300"> Blog </a><a href="/en/graph" class="shrink-0 rounded-full bg-white/5 px-3 py-1.5 text-sm text-zinc-300"> Graph </a><a href="/en/resume" class="shrink-0 rounded-full bg-white/5 px-3 py-1.5 text-sm text-zinc-300"> Resume </a><a href="/en/contact" class="shrink-0 rounded-full bg-white/5 px-3 py-1.5 text-sm text-zinc-300"> Contact </a> <a href="/blog/3152/3152-lecture-8---ensemble-model-and-artificial-neural-networks/" class="shrink-0 rounded-full bg-white/5 px-3 py-1.5 text-sm text-zinc-300"> 中文 </a> </div> </header> <main class="relative z-10" data-astro-transition-scope="astro-gbvijb6a-2">  <article class="mx-auto max-w-3xl px-5 py-16 md:py-24"> <a href="/en/blog" class="text-sm text-zinc-500 transition hover:text-white"> Back to list </a> <header class="mt-10 border-b border-white/10 pb-10"> <p class="text-sm text-zinc-500">2026年4月29日</p> <h1 class="mt-4 text-4xl font-semibold tracking-normal text-white md:text-6xl" data-astro-transition-scope="astro-ywc4v3e3-1">3152 Lecture 8</h1> <p class="mt-5 text-lg leading-8 text-zinc-400">Ensemble Model and Artificial Neural Networks</p> <div class="mt-6 flex flex-wrap gap-2"> <span class="rounded-full border border-white/10 px-3 py-1 text-xs text-zinc-300">FIT3152</span><span class="rounded-full border border-white/10 px-3 py-1 text-xs text-zinc-300">Class Note</span><span class="rounded-full border border-white/10 px-3 py-1 text-xs text-zinc-300">English</span> </div> </header> <div class="prose-content mt-10">  <p>Lecture Slide: <a href="/blog-assets/3152/Lecture%20Note/FIT3152%20Lecture%2008.pdf">FIT3152 Lecture 08.pdf</a></p>
+<p>Previous: <a href="/blog/3152/3152-lecture-7---naive-bayes-classification-and-evaluate-performance">3152 Lecture 7 - Naive Bayes Classification and Evaluate performance</a>
+Next: <a href="/blog/3152/3152-lecture-9---networks-analysis">3152 Lecture 9 - Networks Analysis</a></p>
+<blockquote>
+<p>[!NOTE] Other Unit
+In FIT2086, we also mentioned this at <a href="/blog/2086/2086-lecture-9---trees-and-nearest-neighbour-methods#random-forests">2086 Lecture 9 - Trees and Nearest Neighbour Methods#Random Forests</a></p>
+</blockquote>
+<h2 id="ensemble-model">Ensemble Model</h2>
+<p>Sometimes when we work with more complex data, a single classification model like Decision Tree may not be enough. It may be too simple or unstable, so it is hard to learn many complex patterns in the data, which can lead to low accuracy or high variance. So we introduce Ensemble model.</p>
+<p>To improve the classification model, we build a collection of ‘Experts’, which means a set of different classifier models built from the training data. These models can be trained using different samples, different attributes, or modified weights in the dataset. They can be the same type of classifier or different types of classifiers.</p>
+<p>The result of all classifiers will be combined by methods like majority voting, sometimes with weights.</p>
+<p>The main idea is to create a better classifier from a collection of weaker classifiers.</p>
+<p>Ensemble model works best when:</p>
+<ul>
+<li>Individual classifiers have > 50% accuracy, which means they are better than random guessing.</li>
+<li>Individual classifiers are created independently, i.e. they use different data or settings etc.</li>
+<li>Pooling the result of each classifier will reduce the variance of the overall classification.</li>
+<li>Decision trees work well as the individual classifiers, we often use decision trees as the classifier model in ensemble model.</li>
+</ul>
+<p>Ensemble model also has disadvantages such as longer training time, and model becomes hard to interpret compared to single model.</p>
+<h3 id="bagging">Bagging</h3>
+<p><img src="/blog-assets/3152/Lecture%20Note/Bagging.png" alt="Bagging.png"></p>
+<p>Bagging means Bootstrap Aggregation.</p>
+<p>The main idea of Bagging is to create many different training datasets by sampling with replacement from the original training set.</p>
+<p>Each new dataset has the same size as the original dataset, but some rows may appear multiple times and some rows may not appear.</p>
+<p>Then we train one classifier for each dataset.</p>
+<p>Finally, combine the classifiers by majority voting to produce the final decision.</p>
+<p>Algorithm:</p>
+<ul>
+<li>Make multiple replicates of the original data by sampling with replacement from the training set.</li>
+<li>Construct a single classifier for each replicate.</li>
+<li>Combine the classifiers by taking a majority vote.</li>
+</ul>
+<p>Bagging is useful when:</p>
+<ul>
+<li>There is noise in the data.</li>
+<li>The classifier is unstable, which means small changes in training data can cause large changes in the classifier.</li>
+<li>Examples of unstable classifiers include decision trees, neural networks and linear regression.</li>
+</ul>
+<p>Bagging is not recommended for stable classifiers such as K Nearest Neighbours and Naive Bayes.</p>
+<p>In Bagging, votes can also be translated to confidence.</p>
+<p>For example, if we have 10 trees and 7 trees vote for class A, then the confidence for class A is:</p>
+<span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mfrac><mn>7</mn><mn>10</mn></mfrac><mo>=</mo><mn>0.7</mn></mrow><annotation encoding="application/x-tex">\frac{7}{10}=0.7</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:2.0074em;vertical-align:-0.686em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.3214em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">10</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">7</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">0.7</span></span></span></span></span>
+<h3 id="boosting">Boosting</h3>
+<p><img src="/blog-assets/3152/Lecture%20Note/Boosting.png" alt="Boosting.png"></p>
+<p>Boosting also builds multiple classifiers, but it builds them slowly by incremental improvement.</p>
+<p>Unlike Bagging, Boosting usually uses the original dataset for all trees.</p>
+<p>But the training examples are weighted.</p>
+<p>At the beginning, every training example has the same weight.</p>
+<p>After each classifier is trained, the misclassified examples will get higher weights, so the next classifier will focus more on the hard-to-classify examples.</p>
+<p>The final classification is made by weighted sum of votes from each classifier.</p>
+<p>More accurate classifiers have greater weight.</p>
+<p>Algorithm:</p>
+<ul>
+<li>Assign equal weights to each point in training set, then fit a basic tree.</li>
+<li>Repeat n iterations.</li>
+<li>Update the weights of misclassified items and normalise the weights.</li>
+<li>Build the next tree based on the updated weights.</li>
+<li>Output the final classifier as weighted sum of votes from each tree.</li>
+</ul>
+<p>Boosting can improve classification for imbalanced datasets, where most instances are from one class.</p>
+<p>Boosting tends to achieve better accuracy than Bagging, but it can lead to overfitting if the number of trees is too large.</p>
+<p>There are many Boosting algorithms, and this lecture uses Adaptive Boosting, which is AdaBoost.</p>
+<h3 id="random-forest">Random Forest</h3>
+<p>Random Forest is a refinement of bagged decision trees.</p>
+<p>It is specifically designed for decision trees.</p>
+<p>The main difference between Bagging and Random Forest is:</p>
+<p>Bagging only changes the sample data and the number of trees.</p>
+<p>Random Forest changes the sample data, the number of trees, and also the attributes used to build each tree.</p>
+<p>Algorithm:</p>
+<ul>
+<li>Create multiple datasets from the original training set using subsets of data points and subsets of attributes.</li>
+<li>Build a decision tree classifier for each dataset.</li>
+<li>Combine the classifiers by taking a majority vote.</li>
+</ul>
+<p>Advantages of Random Forest:</p>
+<ul>
+<li>More accurate than individual trees on large datasets.</li>
+<li>No need to prune.</li>
+<li>Not sensitive to outliers.</li>
+<li>Overfitting is usually not a problem.</li>
+</ul>
+<p>Random Forest can also output prediction confidence.</p>
+<p>For example, if many trees vote for one class, the model will have higher confidence for that class.</p>
+<h3 id="compare">Compare</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Metrics\Model</th><th>Bagging</th><th>Boosting</th><th>Random Forest</th></tr></thead><tbody><tr><td>Basic idea</td><td>Train many classifiers on bootstrap samples</td><td>Train classifiers step by step, focus more on previous mistakes</td><td>Train many decision trees using subsets of rows and attributes</td></tr><tr><td>Data used</td><td>Resampled data with replacement</td><td>Original data, but examples have different weights</td><td>Resampled data and subset of attributes</td></tr><tr><td>Combination method</td><td>Majority voting</td><td>Weighted voting</td><td>Majority voting</td></tr><tr><td>Good for</td><td>Noisy data and unstable classifiers</td><td>Imbalanced data and improving accuracy</td><td>Large datasets and decision tree based classification</td></tr><tr><td>Main risk</td><td>Not useful for stable classifiers</td><td>Can overfit if too many trees</td><td>Hard to interpret</td></tr><tr><td>Base classifier</td><td>Often decision tree</td><td>Often decision tree</td><td>Decision tree</td></tr></tbody></table>
+<h3 id="cross-validation">Cross Validation</h3>
+<p>All these models can be further improved by cross validation.</p>
+<p>Cross validation helps test model performance on different train/test splits.</p>
+<p>This can help us understand which parameter settings affect model performance.</p>
+<h2 id="artificial-neural-network-ann">Artificial Neural Network (ANN)</h2>
+<p>Artificial Neural Networks are computer models inspired by neural behaviour in the human brain.</p>
+<p>ANNs can be used for many different problems, such as prediction, classification, pattern recognition and optimisation.</p>
+<p>The main idea is that ANN can “learn” by adjusting the weight of each connection between neurons.</p>
+<p>ANNs are usually accurate, and can handle redundant attributes and noisy data.</p>
+<p>Large ANNs give rise to deep learning.</p>
+<h3 id="artificial-neuron">Artificial Neuron</h3>
+<p>An artificial neuron receives several input values.</p>
+<p>Each input has a weight.</p>
+<p>The neuron calculates the weighted sum of inputs, then subtracts a bias or threshold.</p>
+<p>Then the result is passed into an activation function to produce the output.</p>
+<p><img src="/blog-assets/3152/Lecture%20Note/Artificial%20Neuron.png" alt="Artificial Neuron.png"></p>
+<p>The basic form is:</p>
+<span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>y</mi><mo>=</mo><mi>g</mi><mo stretchy="false">(</mo><msub><mi>w</mi><mn>1</mn></msub><msub><mi>x</mi><mn>1</mn></msub><mo>+</mo><msub><mi>w</mi><mn>2</mn></msub><msub><mi>x</mi><mn>2</mn></msub><mo>+</mo><mo>⋯</mo><mo>+</mo><msub><mi>w</mi><mi>n</mi></msub><msub><mi>x</mi><mi>n</mi></msub><mo>−</mo><mi>θ</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">y=g(w_1x_1+w_2x_2+\cdots+w_nx_n-\theta)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.0359em;">y</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.0359em;">g</span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0269em;">w</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.0269em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.7333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0269em;">w</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.0269em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6667em;vertical-align:-0.0833em;"></span><span class="minner">⋯</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.7333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0269em;">w</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:-0.0269em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">n</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">n</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.0278em;">θ</span><span class="mclose">)</span></span></span></span></span>
+<p>Where:</p>
+<span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mtable rowspacing="0.25em" columnalign="right left" columnspacing="0em"><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><msub><mi>x</mi><mi>i</mi></msub></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mrow></mrow><mo>=</mo><mtext>input variable </mtext><mi>i</mi></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><msub><mi>w</mi><mi>i</mi></msub></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mrow></mrow><mo>=</mo><mtext>weight for input </mtext><mi>i</mi></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mi>θ</mi></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mrow></mrow><mo>=</mo><mtext>threshold / bias</mtext></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mi>g</mi><mo stretchy="false">(</mo><mi mathvariant="normal">.</mi><mo stretchy="false">)</mo></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mrow></mrow><mo>=</mo><mtext>activation function</mtext></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mi>y</mi></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mrow></mrow><mo>=</mo><mtext>output</mtext></mrow></mstyle></mtd></mtr></mtable><annotation encoding="application/x-tex">\begin{aligned}
+x_i &#x26;= \text{input variable } i \\
+w_i &#x26;= \text{weight for input } i \\
+\theta &#x26;= \text{threshold / bias} \\
+g(.) &#x26;= \text{activation function} \\
+y &#x26;= \text{output}
+\end{aligned}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:7.2em;vertical-align:-3.35em;"></span><span class="mord"><span class="mtable"><span class="col-align-r"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:3.85em;"><span style="top:-6.01em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span><span style="top:-4.51em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathnormal" style="margin-right:0.0269em;">w</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:-0.0269em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span><span style="top:-3.01em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0278em;">θ</span></span></span><span style="top:-1.51em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0359em;">g</span><span class="mopen">(</span><span class="mord">.</span><span class="mclose">)</span></span></span><span style="top:-0.01em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0359em;">y</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:3.35em;"><span></span></span></span></span></span><span class="col-align-l"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:3.85em;"><span style="top:-6.01em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mord text"><span class="mord">input variable </span></span><span class="mord mathnormal">i</span></span></span><span style="top:-4.51em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mord text"><span class="mord">weight for input </span></span><span class="mord mathnormal">i</span></span></span><span style="top:-3.01em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mord text"><span class="mord">threshold / bias</span></span></span></span><span style="top:-1.51em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mord text"><span class="mord">activation function</span></span></span></span><span style="top:-0.01em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mord text"><span class="mord">output</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:3.35em;"><span></span></span></span></span></span></span></span></span></span></span></span>
+<p>So the operation of artificial neuron is:</p>
+<ul>
+<li>Input is given by variables <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mn>1</mn></msub><mo separator="true">,</mo><msub><mi>x</mi><mn>2</mn></msub><mo separator="true">,</mo><mo>⋯</mo><mtext> </mtext><mo separator="true">,</mo><msub><mi>x</mi><mi>n</mi></msub></mrow><annotation encoding="application/x-tex">x_1,x_2,\cdots,x_n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.1944em;"></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="minner">⋯</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">n</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>.</li>
+<li>Each input is multiplied by its weight.</li>
+<li>The neuron calculates the weighted sum.</li>
+<li>Bias or threshold is subtracted.</li>
+<li>Activation function converts the activation potential into output.</li>
+</ul>
+<h3 id="activation-function-激活函数">Activation Function 激活函数</h3>
+<p>Activation function decides how the neuron output should be produced from the activation potential.</p>
+<p>It also limits the output of the neuron.</p>
+<p>Common activation functions include:</p>
+<ul>
+<li>Step function</li>
+<li>Ramp function</li>
+<li>Logistic function</li>
+<li>Hyperbolic Tangent, Tanh</li>
+<li>Gaussian function</li>
+</ul>
+<p>Fully differentiable activation functions are useful because they allow the model to optimise weights during training.</p>
+<h3 id="network-architecture">Network Architecture</h3>
+<p>The structure of ANN determines:</p>
+<ul>
+<li>The number of inputs the model can accept.</li>
+<li>The number of outputs the model can produce.</li>
+<li>The complexity of interactions that can be modelled.</li>
+</ul>
+<p>There are usually three types of layers:</p>
+<ul>
+<li>Input layer</li>
+<li>Hidden layer</li>
+<li>Output layer</li>
+</ul>
+<p>Input layer receives the input variables.</p>
+<p>Hidden layers learn the relationship and interaction between input variables.</p>
+<p>Output layer produces the final prediction or classification.</p>
+<h3 id="single-layer-feedforward-ann">Single Layer Feedforward ANN</h3>
+<p>Single layer feedforward ANN has n inputs and m outputs.</p>
+<p>Information only flows in one direction, from input to output.</p>
+<p>There is no feedback loop.</p>
+<h3 id="multiple-layer-feedforward-ann">Multiple Layer Feedforward ANN</h3>
+<p>Multiple layer feedforward ANN has one or more hidden layers between input and output.</p>
+<p>Hidden layers allow mixing and interaction between neurons.</p>
+<p>This helps the neural network solve complex and non-linear problems.</p>
+<p>Examples include:</p>
+<ul>
+<li>Optimisation</li>
+<li>Pattern recognition</li>
+<li>Classification</li>
+</ul>
+<p>More hidden layers can model more complex interactions.</p>
+<p>TODO: Add MLP</p>
+<h3 id="recurrent--feedback-architecture">Recurrent / Feedback Architecture</h3>
+<p>In recurrent or feedback architecture, outputs of neurons can become inputs for earlier layers.</p>
+<p>This allows dynamic information processing.</p>
+<p>It is useful for time-varying systems, such as:</p>
+<ul>
+<li>Time series prediction</li>
+<li>Optimisation</li>
+<li>Process control</li>
+</ul>
+<h3 id="training-ann">Training ANN</h3>
+<p>Training ANN means adjusting the weights of each connection and the thresholds of neurons.</p>
+<p>The goal is to make the predicted output close to the actual output in the training set.</p>
+<p>For supervised learning, training is an iterative optimisation process.</p>
+<p>It tries to reduce the error between known output and predicted output.</p>
+<p>For unsupervised learning, the goal is more about producing clusters of similar subsets of the data.</p>
+<h3 id="setting-up-ann">Setting Up ANN</h3>
+<p>Before training ANN, the data needs pre-processing.</p>
+<p>Important requirements:</p>
+<ul>
+<li>One input neuron for each input variable.</li>
+<li>One output neuron for each output class.</li>
+<li>Inputs should be numerical.</li>
+<li>Data should be normalised.</li>
+<li>Categorical data needs to be converted into binary columns using one hot encoding.</li>
+<li>There should be no missing values.</li>
+</ul>
+<p>For classification with multiple classes, we need multiple output nodes.</p>
+<p>For example, Iris dataset has 3 classes, so it needs 3 output nodes:</p>
+<ul>
+<li>setosa</li>
+<li>versicolor</li>
+<li>virginica</li>
+</ul>
+<p>Each class can be represented by an indicator variable.</p>  </div> <section class="mt-12 border-t border-white/10 pt-8"> <h2 class="text-2xl font-semibold text-white">Backlinks</h2> <div class="mt-4 grid gap-3"> <a href="/en/blog/3152/3152-lecture-7---naive-bayes-classification-and-evaluate-performance" class="rounded-lg border border-white/10 bg-white/[0.03] p-4 transition hover:border-white/30"> <p class="font-medium text-white">3152 Lecture 7</p> <p class="mt-2 text-sm leading-6 text-zinc-400">Naive Bayes Classification and Evaluate performance</p> </a><a href="/en/blog/3152/3152-lecture-9---networks-analysis" class="rounded-lg border border-white/10 bg-white/[0.03] p-4 transition hover:border-white/30"> <p class="font-medium text-white">3152 Lecture 9</p> <p class="mt-2 text-sm leading-6 text-zinc-400">Network Analysis</p> </a> </div> </section> </article> <script>(function(){const imageAssets = [{"name":"adjacency matrix.png","url":"/blog-assets/3152/Lecture%20Note/adjacency%20matrix.png"},{"name":"Artificial Neuron.png","url":"/blog-assets/3152/Lecture%20Note/Artificial%20Neuron.png"},{"name":"Bagging.png","url":"/blog-assets/3152/Lecture%20Note/Bagging.png"},{"name":"Boosting.png","url":"/blog-assets/3152/Lecture%20Note/Boosting.png"},{"name":"Clustering.png","url":"/blog-assets/3152/Lecture%20Note/Clustering.png"},{"name":"Decision Tree.png","url":"/blog-assets/3152/Lecture%20Note/Decision%20Tree.png"},{"name":"Hierarchical Clustering.png","url":"/blog-assets/3152/Lecture%20Note/Hierarchical%20Clustering.png"},{"name":"Network.png","url":"/blog-assets/3152/Lecture%20Note/Network.png"},{"name":"Sensitivity and Specificity.png","url":"/blog-assets/3152/Lecture%20Note/Sensitivity%20and%20Specificity.png"}];
+
+		const imageAssetMap = new Map(imageAssets.map((asset) => [asset.name.toLowerCase(), asset.url]));
+		const calloutPattern = /^\[!(\w+)\]\s*([^\n]*)/;
+		const imagePattern = /\.(avif|gif|jpe?g|png|svg|webp)$/i;
+
+		function transformObsidianCallouts() {
+			document.querySelectorAll('.prose-content blockquote').forEach((quote) => {
+				const firstParagraph = quote.querySelector(':scope > p');
+				if (!firstParagraph?.textContent) return;
+
+				const match = firstParagraph.textContent.match(calloutPattern);
+				if (!match) return;
+
+				const type = match[1].toLowerCase();
+				const title = match[2].trim() || match[1];
+				const callout = document.createElement('div');
+				callout.className = `obsidian-callout obsidian-callout-${type}`;
+				callout.dataset.callout = type;
+
+				const titleElement = document.createElement('div');
+				titleElement.className = 'obsidian-callout-title';
+				titleElement.textContent = title;
+
+				const bodyElement = document.createElement('div');
+				bodyElement.className = 'obsidian-callout-body';
+
+				const firstBodyParagraph = firstParagraph.cloneNode(true);
+				const walker = document.createTreeWalker(firstBodyParagraph, NodeFilter.SHOW_TEXT);
+				let firstText = walker.nextNode();
+				while (firstText && !calloutPattern.test(firstText.nodeValue ?? '')) {
+					firstText = walker.nextNode();
+				}
+
+				if (firstText) {
+					firstText.nodeValue = (firstText.nodeValue ?? '').replace(calloutPattern, '').replace(/^\r?\n?/, '');
+				}
+
+				if (firstBodyParagraph.textContent?.trim()) {
+					bodyElement.append(firstBodyParagraph);
+				}
+
+				Array.from(quote.children)
+					.slice(1)
+					.forEach((child) => bodyElement.append(child.cloneNode(true)));
+
+				callout.append(titleElement, bodyElement);
+				quote.replaceWith(callout);
+			});
+		}
+
+		function transformNoteNav() {
+			document.querySelectorAll('.prose-content p').forEach((paragraph) => {
+				const text = paragraph.textContent?.trim() ?? '';
+				if (/^(Previous|Next):/.test(text) && (text.includes('Previous:') || text.includes('Next:'))) {
+					paragraph.classList.add('note-nav');
+					return;
+				}
+
+				if (/^Lecture (Note|Slide)\b/.test(text)) {
+					paragraph.classList.add('note-resources');
+				}
+			});
+		}
+
+		function transformObsidianImages() {
+			document.querySelectorAll('.prose-content p a').forEach((link) => {
+				const label = link.textContent?.trim() ?? '';
+				if (!imagePattern.test(label)) return;
+
+				const previous = link.previousSibling;
+				if (previous?.nodeType !== Node.TEXT_NODE || !previous.nodeValue?.endsWith('!')) return;
+
+				const src = imageAssetMap.get(label.toLowerCase());
+				if (!src) return;
+
+				previous.nodeValue = previous.nodeValue.slice(0, -1);
+
+				const image = document.createElement('img');
+				image.src = src;
+				image.alt = label;
+				image.loading = 'lazy';
+				image.decoding = 'async';
+				link.replaceWith(image);
+				image.closest('p')?.classList.add('obsidian-image');
+			});
+		}
+
+		function transformTables() {
+			document.querySelectorAll('.prose-content table').forEach((table) => {
+				if (table.parentElement?.classList.contains('table-scroll')) return;
+
+				const wrapper = document.createElement('div');
+				wrapper.className = 'table-scroll';
+				table.replaceWith(wrapper);
+				wrapper.append(table);
+			});
+		}
+
+		transformObsidianCallouts();
+		transformNoteNav();
+		transformObsidianImages();
+		transformTables();
+		document.addEventListener('astro:page-load', () => {
+			transformObsidianCallouts();
+			transformNoteNav();
+			transformObsidianImages();
+			transformTables();
+		});
+	})();</script>  </main> <div class="relative z-10"> <footer class="border-t border-white/10"> <div class="mx-auto grid max-w-6xl gap-8 px-5 py-10 md:grid-cols-[1fr_auto] md:items-end"> <div> <p class="text-lg font-semibold text-white">C3EZ</p> <p class="mt-2 max-w-xl text-sm leading-6 text-zinc-400">Personal website of C3EZ, covering computer science, data science, AI projects, course notes, and selected work.</p> </div> <div class="flex flex-wrap gap-3"> <a href="https://github.com/luckykevvv" class="inline-flex items-center gap-2 text-sm text-zinc-400 transition hover:text-white" target="_blank"> <span class="grid place-items-center overflow-hidden rounded-full bg-white/10 text-[10px] font-semibold text-zinc-300 h-6 w-6 border border-white/10 bg-white/[0.04]"> <img src="https://cdn.simpleicons.org/github/white" alt="" class="h-[62%] w-[62%] object-contain" loading="lazy"> </span> GitHub </a><a href="https://space.bilibili.com/285705387" class="inline-flex items-center gap-2 text-sm text-zinc-400 transition hover:text-white" target="_blank"> <span class="grid place-items-center overflow-hidden rounded-full bg-white/10 text-[10px] font-semibold text-zinc-300 h-6 w-6 border border-white/10 bg-white/[0.04]"> <img src="https://cdn.simpleicons.org/bilibili/white" alt="" class="h-[62%] w-[62%] object-contain" loading="lazy"> </span> Bilibili </a> </div> </div> <div class="border-t border-white/10"> <p class="mx-auto max-w-6xl px-5 py-5 text-xs text-zinc-500">
+Powered by
+<a href="https://astro.build/" class="text-zinc-300 transition hover:text-white" target="_blank" rel="noreferrer">Astro</a>
+and
+<a href="https://github.com/luckykevvv/Atlas" class="text-zinc-300 transition hover:text-white" target="_blank" rel="noreferrer">Atlas</a> </p> </div> </footer> </div> <script type="module">const n=document.querySelector("[data-rain-canvas]"),y=window.matchMedia("(prefers-reduced-motion: reduce)");if(n&&!y.matches&&!n.dataset.rainReady){n.dataset.rainReady="true";const a=n.getContext("2d");if(!a)throw new Error("Rain canvas context is unavailable.");const b=n.dataset.mode??"falling",c=Number(n.dataset.density??.7),m=Number(n.dataset.speed??1),M=n.dataset.dropColor??"rgba(210, 230, 255, 0.5)",v=n.dataset.rippleColor??"rgba(210, 230, 255, 0.34)",f=Number(n.dataset.maxDrops??170),R=Number(n.dataset.maxRipples??36),d=[],l=[],s=[];let p=0,i=0,r=0,h=1;const x=()=>{h=Math.min(window.devicePixelRatio||1,2),i=window.innerWidth,r=window.innerHeight,n.width=Math.floor(i*h),n.height=Math.floor(r*h),n.style.width=`${i}px`,n.style.height=`${r}px`,a?.setTransform(h,0,0,h,0,0)},F=()=>{d.length>=f||d.push({x:-i*.08+Math.random()*i*1.16,y:-r*.18-Math.random()*80,length:16+Math.random()*28,velocity:(9+Math.random()*8)*m,alpha:.22+Math.random()*.42,drift:-2.6-Math.random()*2.2,impactY:Math.random()*r})},C=()=>{l.length>=f||l.push({x:Math.random()*i,y:Math.random()*r,radius:.4+Math.random()*1.8,maxRadius:10+Math.random()*7,velocity:(.22+Math.random()*.44)*m,alpha:.08+Math.random()*.22,wobble:Math.random()*Math.PI*2})},g=(o,e,t,u=1.8)=>{s.length>R&&s.shift(),s.push({x:o,y:e,radius:2,alpha:Math.min(.42,.16+t/60),growth:.9+Math.random()*.65,stretch:u})},A=()=>{const o=Math.max(2,Math.round(c*8));for(let e=0;e<o;e+=1)Math.random()<c*.52&&F();for(let e=d.length-1;e>=0;e-=1){const t=d[e];t.y+=t.velocity,t.x+=t.drift,a.save(),a.globalAlpha=t.alpha,a.strokeStyle=M,a.lineWidth=1,a.beginPath(),a.moveTo(t.x,t.y),a.lineTo(t.x+t.drift*1.8,t.y+t.length),a.stroke(),a.restore(),(t.y>=t.impactY||t.y>r+80||t.x<-120)&&(g(t.x,Math.max(8,Math.min(t.y+t.length,r-8)),t.velocity,1.9),d.splice(e,1))}},P=()=>{const o=Math.max(2,Math.round(c*6));for(let e=0;e<o;e+=1)Math.random()<c*.38&&C();for(let e=l.length-1;e>=0;e-=1){const t=l[e];t.radius+=t.velocity,t.alpha+=.008*m,t.wobble+=.035;const u=Math.cos(t.wobble)*t.radius*.08,D=Math.sin(t.wobble)*t.radius*.08;a.save(),a.globalAlpha=Math.min(t.alpha,.5),a.strokeStyle=M,a.lineWidth=1,a.beginPath(),a.arc(t.x+u,t.y+D,t.radius,0,Math.PI*2),a.stroke(),a.restore(),t.radius>t.maxRadius&&(g(t.x,t.y,t.radius*2.2,1),l.splice(e,1))}},k=()=>{for(let o=s.length-1;o>=0;o-=1){const e=s[o];e.radius+=e.growth,e.alpha*=.965,a.save(),a.globalAlpha=e.alpha,a.strokeStyle=v,a.lineWidth=1,a.beginPath(),a.ellipse(e.x,e.y,e.radius*e.stretch,e.radius*.48,0,0,Math.PI*2),a.stroke(),a.restore(),(e.alpha<.015||e.radius>56)&&s.splice(o,1)}},w=()=>{a.clearRect(0,0,i,r),b==="front"?P():A(),k(),p=window.requestAnimationFrame(w)};x(),window.addEventListener("resize",x),p=window.requestAnimationFrame(w),y.addEventListener("change",o=>{o.matches?(window.cancelAnimationFrame(p),a?.clearRect(0,0,i,r)):p=window.requestAnimationFrame(w)})}</script></body></html>
